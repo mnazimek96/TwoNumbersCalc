@@ -1,0 +1,55 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <Label alignment="CENTER" prefWidth="Infinity">
+            <text>Simple calculator</text>
+            <font>
+                <Font name="System Bold" size="20"/>
+            </font>
+            <padding>
+                <Insets top="10" bottom="10" left="10" right="10"/>
+            </padding>
+        </Label>
+    </top>
+    <left>
+        <VBox alignment="TOP_CENTER" spacing="7">
+            <Button text="+" prefWidth="25" onAction="#add"/>
+            <Button text="-" prefWidth="25" onAction="#subtract"/>
+            <Button text="*" prefWidth="25" onAction="#multiply"/>
+            <Button text="/" prefWidth="25" onAction="#divide"/>
+            <padding>
+                <Insets left="10" right="10"/>
+            </padding>
+        </VBox>
+    </left>
+    <center>
+        <GridPane alignment="TOP_CENTER" gridLinesVisible="false">
+            <VBox spacing="7" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <TextField fx:id="number1" promptText="Enter number 1"/>
+                <TextField fx:id="number2" promptText="Enter number 2"/>
+                <padding>
+                    <Insets left="30" right="30"/>
+                </padding>
+            </VBox>
+            <Label text=""  GridPane.columnIndex="0" GridPane.rowIndex="1" prefHeight="40"/>
+            <HBox alignment="BOTTOM_CENTER" spacing="7" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <Label text="Result"/>
+                <Label fx:id="result" text="" style="-fx-border-color: #C8C8C8" minWidth="50" alignment="CENTER"/>
+                <padding>
+                    <Insets left="30" right="30"/>
+                </padding>
+            </HBox>
+        </GridPane>
+
+    </center>
+</BorderPane>
